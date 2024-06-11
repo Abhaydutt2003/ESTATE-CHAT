@@ -1,0 +1,69 @@
+@import '../../responsive.scss';
+
+
+
+nav{
+    height: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+
+    a{
+        transition: all 0.4s ease;
+
+
+        @include sm{
+            display: none;
+        }
+
+        &:hover{
+            scale: 1.05;
+        }
+    }
+
+
+    .left{
+        flex:3;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        .logo{
+            font-weight: bold;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            img{
+                width: 28px;
+            }
+            span{
+                @include md{
+                    display: none;
+                }
+                @include sm{
+                    display: initial;
+                }
+            }
+        }
+    }
+
+    a{
+        padding: 12px 24px;
+    }
+    .right{
+        flex: 2;
+        display: flex;
+        padding: 0px 20px 0px 20px;
+        align-items: center;
+        justify-content: flex-end;
+        background-color: #fcf5f3;
+        height: 100%;
+        .register{
+            background-color: #fece51 ;            
+        }
+    }
+}
+
+
