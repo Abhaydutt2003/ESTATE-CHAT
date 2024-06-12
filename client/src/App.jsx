@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import {Layout,HomePage,ListPage} from './pages';
+import {Layout,HomePage,ListPage,SinglePage} from './pages';
 
 
 const router = createBrowserRouter([
@@ -14,6 +14,10 @@ const router = createBrowserRouter([
       {
         path:'/list',
         element:<ListPage></ListPage>
+      },
+      {
+        path:'/:id',
+        element:<SinglePage></SinglePage>
       }
     ]
   }

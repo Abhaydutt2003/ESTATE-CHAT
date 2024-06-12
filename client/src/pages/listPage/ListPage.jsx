@@ -1,7 +1,8 @@
 import React from 'react'
 import './style.scss';
 import {listData} from '../../lib/dummyData';
-import {Filter,Card} from '../../components';
+import {Filter,Card,Map} from '../../components';
+
 
 const ListPage = () => {
   const data = listData;
@@ -21,7 +22,9 @@ const ListPage = () => {
           }
         </div>
       </div>
-      <div className='mapContainer'>Map</div>
+      <div className='mapContainer'>
+        <Map items = {data}></Map>
+      </div>
     </div>
   )
 }

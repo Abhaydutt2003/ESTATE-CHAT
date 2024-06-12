@@ -2,42 +2,44 @@ import "./style.scss";
 
 import logo from "../../../public/logo.png";
 import menuIcon from "../../../public/menu.png";
+import { Link } from "react-router-dom";
+
 import { useState } from "react";
 
 const NavBar = () => {
-  const [isActive, setIsActive] = useState(false);
+  const [open, setOpen] = useState(false);
   return (
     <nav>
       <div className="left">
-        <a href="/" className="logo">
+        <Link to="/" className="logo">
           <img src={logo} alt=""></img>
           <span>Estate-Chat</span>
-        </a>
-        <a href="/">Home</a>
-        <a href="/">About</a>
-        <a href="/">Contact</a>
-        <a href="/">Agents</a>
+        </Link>
+        <Link to="/">Home</Link>
+        <Link to="/">About</Link>
+        <Link to="/">Contact</Link>
+        <Link to="/">Agents</Link>
       </div>
 
       <div className="right">
-        <a href="/">Sign In</a>
-        <a href="/" className="register">
+        <Link to="/">Sign In</Link>
+        <Link to="/" className="register">
           Sign Up
-        </a>
+        </Link>
         <div className=" menuIcon">
           <img
             src={menuIcon}
             alt=""
-            onClick={() => setIsActive((prev) => !prev)}
+            onClick={() => setOpen((prev) => !prev)}
           ></img>
         </div>
-        <div className={(isActive === true) ? "menu" : "menu active"}>
-          <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">Contact</a>
-          <a href="/">Agents</a>
-          <a href="/">Sign In</a>
-          <a href="/">Sign Up</a>
+        <div className={open ? "menu active" : "menu"}>
+          <Link to="/">Home</Link>
+          <Link to="/">About</Link>
+          <Link to="/">Contact</Link>
+          <Link to="/">Agents</Link>
+          <Link to="/">Sign In</Link>
+          <Link to="/">Sign Up</Link>
         </div>
       </div>
     </nav>
