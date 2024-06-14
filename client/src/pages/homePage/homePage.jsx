@@ -1,8 +1,13 @@
 import "./style.scss";
 import { SearchBar } from "../../components";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 
 const HomePage = () => {
+
+  const {currentUser} = useContext(AuthContext);
+  console.log(currentUser);
   return (
     <section className="homePage">
       <div className="textContainer">

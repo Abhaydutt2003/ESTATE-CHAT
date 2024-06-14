@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import {Layout,HomePage,ListPage,SinglePage} from './pages';
+import {Layout,HomePage,ListPage,SinglePage,Profile,Register,Login,RequireAuth} from './pages';
 
 
 const router = createBrowserRouter([
@@ -18,8 +18,25 @@ const router = createBrowserRouter([
       {
         path:'/:id',
         element:<SinglePage></SinglePage>
-      }
+      },
+      {
+        path:'/register',
+        element:<Register></Register>
+      },
+      {
+        path:'/login',
+        element:<Login></Login>
+      },
     ]
+  },{
+    path:'/',
+    element:<RequireAuth></RequireAuth>,
+    children:[
+      {
+        path:'/profile',
+        element:<Profile></Profile>,
+      }
+    ] 
   }
 ]);
 

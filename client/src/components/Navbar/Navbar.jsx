@@ -1,18 +1,18 @@
 import "./style.scss";
-
-import logo from "../../../public/logo.png";
-import menuIcon from "../../../public/menu.png";
 import { Link } from "react-router-dom";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
+import {AuthContext} from '../../context/AuthContext';
 
 const NavBar = () => {
+  const {updateUser,currentUser} = useContext(AuthContext);
   const [open, setOpen] = useState(false);
+  const user = currentUser;
   return (
     <nav>
       <div className="left">
         <Link to="/" className="logo">
-          <img src={logo} alt=""></img>
+          <img src="/logo.png" alt=""></img>
           <span>Estate-Chat</span>
         </Link>
         <Link to="/">Home</Link>
@@ -22,13 +22,29 @@ const NavBar = () => {
       </div>
 
       <div className="right">
-        <Link to="/">Sign In</Link>
-        <Link to="/" className="register">
-          Sign Up
-        </Link>
+        {user ? (
+          <div className="user">
+            <img
+              src={currentUser.avatar || '/noavatar.jpg'}
+              alt=""
+            ></img>
+            <span>{currentUser.username}</span>
+            <Link to = "/profile" className="profileButton">
+              <div className="notification">3</div>
+              <span>Profile</span>
+            </Link>
+          </div>
+        ) : (
+          <>
+            <a href="/login">Sign in</a>
+            <a href="/register" className="register">
+              Sign up
+            </a>
+          </>
+        )}
         <div className=" menuIcon">
           <img
-            src={menuIcon}
+            src='/menu.png'
             alt=""
             onClick={() => setOpen((prev) => !prev)}
           ></img>
