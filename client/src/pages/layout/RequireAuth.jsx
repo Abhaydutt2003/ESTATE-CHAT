@@ -1,8 +1,11 @@
 import React from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { Navigate} from "react-router-dom";
+import { Navigate,Outlet} from "react-router-dom";
 import {toast} from 'react-toastify';
+import {Navbar} from '../../components';
+
+
 function RequireAuth() {
   const { currentUser } = useContext(AuthContext);
   

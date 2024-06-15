@@ -3,7 +3,7 @@ import React, { useContext, useEffect } from "react";
 import { List, Chat } from "../../components";
 import { customFetch } from "../../api/axios";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
 const Profile = () => {
@@ -34,7 +34,9 @@ const Profile = () => {
         <div className="wrapper">
           <div className="title">
             <h1>User Information</h1>
-            <button>Update Profile</button>
+            <Link to="/profile/update">
+              <button>Update Profile</button>
+            </Link>
           </div>
           <div className="info">
             <span>

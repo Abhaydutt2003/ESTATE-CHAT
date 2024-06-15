@@ -87,7 +87,6 @@ export const login = async (req, res) => {
     });
     console.log(res.cookie);
     const {password:_,...userInfo} = user;
-    console.log(userInfo);
     return res
       .status(200)
       .json({ status: "success", message: "User logged in successfully",userInfo});

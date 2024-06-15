@@ -25,11 +25,13 @@ const Register = () => {
       toast.error(
         "Username should start with a letter, be 3-23 letters, numbers, hyphens, or underscores."
       );
+      setIsLoading(false);
       return;
     } else if (!v2) {
       toast.error(
         "Strong password required: 8-24 characters, mix uppercase & lowercase letters, numbers, and symbols."
       );
+      setIsLoading(false);
       return;
     }
     try {

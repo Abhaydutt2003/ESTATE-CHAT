@@ -6,4 +6,4 @@ export {default as Map} from './map/Map';
 export {default as Slider} from './slider/Slider';
 export {default as List} from './list/List';
 export {default as Chat} from './chat/Chat';
-export {default as ProfileUpdate} from './profileUpdate/ProfileUpdate';
+export {default as UploadImage} from './uploadImage/UploadImage';

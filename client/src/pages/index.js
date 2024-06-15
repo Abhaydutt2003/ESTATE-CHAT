@@ -6,3 +6,4 @@ export {default as SinglePage} from './singlePage/SinglePage';
 export {default as Profile} from './profile/Profile';
 export {default as Register} from './register/Register';
 export {default as Login} from './login/Login';
+export {default as ProfileUpdate} from './profileUpdate/ProfileUpdate';

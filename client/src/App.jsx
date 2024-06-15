@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import {Layout,HomePage,ListPage,SinglePage,Profile,Register,Login,RequireAuth} from './pages';
+import {Layout,HomePage,ListPage,SinglePage,Profile,Register,Login,RequireAuth,ProfileUpdate} from './pages';
 
 
 const router = createBrowserRouter([
@@ -35,6 +35,10 @@ const router = createBrowserRouter([
       {
         path:'/profile',
         element:<Profile></Profile>,
+      },
+      {
+        path:'/profile/update',
+        element:<ProfileUpdate></ProfileUpdate>,
       }
     ] 
   }
