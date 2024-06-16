@@ -87,4 +87,10 @@ enum Property {
   land
 }
 
+
+
+model Chat {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId 
+}
+
 //TODO npx prisma db push
